@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function (props) {
+const Logo = (props) => {
   return (
     <div
       className="logo"
@@ -14,4 +14,6 @@ export default function (props) {
       {props.children}
     </div>
   );
-}
+};
+
+export default Logo;

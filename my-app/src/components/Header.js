@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function (props) {
+const Header = (props) => {
   return (
     <header
       style={{
@@ -12,4 +12,6 @@ export default function (props) {
       {props.children}
     </header>
   );
-}
+};
+
+export default Header;
