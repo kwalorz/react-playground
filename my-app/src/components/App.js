@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Logo from "./Logo";
 import Card from "./Card";
+import Button from "./Button";
 
 let data = [
   {
@@ -51,8 +52,15 @@ const App = (props) => {
         </nav>
       </Header>
       <main
-        style={{ margin: "20px auto", width: "100%", maxWidth: "960px" }}
-      ></main>
+        style={{
+          margin: "0 auto",
+          width: "100%",
+          maxWidth: "960px",
+          padding: "20px 20px",
+        }}
+      >
+        <Button>Save</Button>
+      </main>
       <div className="ui link cards">{printCard()}</div>
     </>
   );
