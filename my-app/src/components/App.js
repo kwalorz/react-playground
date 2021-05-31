@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Logo from "./Logo";
 import Card from "./Card";
-import Button from "./Button";
+import Counter from "./counter/Counter";
 
 let data = [
   {
@@ -59,7 +59,7 @@ const App = (props) => {
           padding: "20px 20px",
         }}
       >
-        <Button>Save</Button>
+        <Counter />
       </main>
       <div className="ui link cards">{printCard()}</div>
     </>

@@ -1,0 +1,24 @@
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.counter__number {
+  font-size: 6rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+
+.counter__plus,
+.counter__minus {
+  background: black;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  padding: 1rem;
+  width: 150px;
+  margin: 1rem;
+}
