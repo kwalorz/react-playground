@@ -3,6 +3,7 @@ import Header from "./Header";
 import Logo from "./Logo";
 import Card from "./Card";
 import Counter from "./counter/Counter";
+import Form from "./form/Form";
 
 let data = [
   {
@@ -51,6 +52,7 @@ const App = (props) => {
           <a href="#">Link</a>
         </nav>
       </Header>
+      <Form />
       <main
         style={{
           margin: "0 auto",
@@ -58,9 +60,8 @@ const App = (props) => {
           maxWidth: "960px",
           padding: "20px 20px",
         }}
-      >
-        <Counter />
-      </main>
+      ></main>
+
       <div className="ui link cards">{printCard()}</div>
     </>
   );
