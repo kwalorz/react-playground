@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Logo from "./Logo";
 import Card from "./Card";
-import Counter from "./counter/Counter";
+import Counter from "./counterClass/Counter";
 import Form from "./form/Form";
 
 let data = [
@@ -52,7 +52,7 @@ const App = (props) => {
           <a href="#">Link</a>
         </nav>
       </Header>
-      <Form />
+      <Counter />
       <main
         style={{
           margin: "0 auto",

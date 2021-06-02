@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Form = (props) => {
   const [fname, setFname] = useState("");
+  const [showErr, setShowErr] = useState(false);
 
   const formSubmitted = (e) => {
     e.preventDefault(e);
@@ -10,6 +11,13 @@ const Form = (props) => {
 
   const handleChange = (e) => {
     e.preventDefault(e);
+    setFname(e.target.value);
+  };
+
+  const checkString = () => {
+    if (fname.length < 5) {
+      setShowErr(true);
+    }
   };
 
   return (
@@ -25,9 +33,14 @@ const Form = (props) => {
         type="text"
         id="fname"
         name="fname"
-        value=""
+        value={fname}
         onChange={handleChange}
+        onFocus={() => setShowErr(false)}
+        onBlur={() => checkString()}
       ></input>
+      <div className={`error-message ${showErr ? "show" : ""}`}>
+        Please put your full name
+      </div>
       <button type="submit">Save</button>
     </form>
   );
