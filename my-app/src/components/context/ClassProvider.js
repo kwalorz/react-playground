@@ -11,9 +11,15 @@ export class GlobalStateProvider extends Component {
     name: "Kevin",
   };
 
+  handleChange = (e) => {
+    this.setState({ ...this.state, name: e.target.value });
+  };
+
   render() {
     return (
-      <StateContext.Provider value={this.state}>
+      <StateContext.Provider
+        value={{ state: this.state, handleChange: this.handleChange }}
+      >
         {this.props.children}
       </StateContext.Provider>
     );

@@ -4,9 +4,10 @@ import Logo from "./Logo";
 import Card from "./Card";
 import Counter from "./counterClass/Counter";
 import Form from "./form/Form";
-import { GlobalStateProvider, StateContext } from "./context/ClassProvider";
+import { GlobalStateProvider, StateContext } from "./context/FuncProvider";
 import A from "./context/A";
 import B from "./context/B";
+import C from "./context/C";
 
 let data = [
   {
@@ -69,9 +70,16 @@ const App = (props) => {
                   padding: "20px 20px",
                 }}
               ></main>
-              <h1>Test: {context.name}</h1>
+              <input
+                type="text"
+                value={context.state.name}
+                onChange={context.handleChange}
+              ></input>
+              <h1>Test: {context.state.name}</h1>
               <A>
-                <B></B>
+                <B>
+                  <C></C>
+                </B>
               </A>
 
               <div className="ui link cards">{printCard()}</div>
