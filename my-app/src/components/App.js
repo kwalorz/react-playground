@@ -4,6 +4,9 @@ import Logo from "./Logo";
 import Card from "./Card";
 import Counter from "./counterClass/Counter";
 import Form from "./form/Form";
+import { GlobalStateProvider, StateContext } from "./context/ClassProvider";
+import A from "./context/A";
+import B from "./context/B";
 
 let data = [
   {
@@ -43,27 +46,40 @@ const App = (props) => {
   };
 
   return (
-    <>
-      <Header background="black">
-        <Logo>Kevin's Store</Logo>
-        <nav>
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-          <a href="#">Link</a>
-        </nav>
-      </Header>
-      <Counter />
-      <main
-        style={{
-          margin: "0 auto",
-          width: "100%",
-          maxWidth: "960px",
-          padding: "20px 20px",
-        }}
-      ></main>
+    <GlobalStateProvider>
+      <StateContext.Consumer>
+        {(context) => {
+          console.log(context);
+          return (
+            <>
+              <Header background="black">
+                <Logo>Kevin's Store</Logo>
+                <nav>
+                  <a href="#">Link</a>
+                  <a href="#">Link</a>
+                  <a href="#">Link</a>
+                </nav>
+              </Header>
+              <Counter />
+              <main
+                style={{
+                  margin: "0 auto",
+                  width: "100%",
+                  maxWidth: "960px",
+                  padding: "20px 20px",
+                }}
+              ></main>
+              <h1>Test: {context.name}</h1>
+              <A>
+                <B></B>
+              </A>
 
-      <div className="ui link cards">{printCard()}</div>
-    </>
+              <div className="ui link cards">{printCard()}</div>
+            </>
+          );
+        }}
+      </StateContext.Consumer>
+    </GlobalStateProvider>
   );
 };
 
